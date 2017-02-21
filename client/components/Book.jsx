@@ -6,11 +6,11 @@ export default class Book extends React.Component {
   }
   render () {
     return (
-        <div className="book">
-          <div className="preview-img">
-          <img src={this.props.src} onClick={this.update.bind(this)}/>
+        <div className="book-preview">
+          <div className="book-preview-img">
+            <img src={this.props.src} onClick={this.update.bind(this)}/>
           </div>
-          <div className="book-details">
+          <div className="book-preview-details">
             <a onClick={this.update.bind(this)}>{this.props.title}</a>
             <p>Author: {this.props.author}</p>
           </div>
