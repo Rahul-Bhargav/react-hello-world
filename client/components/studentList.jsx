@@ -1,6 +1,10 @@
 import React from 'react'
 
 export default class StudentList extends React.Component {
+  studentClicked (msg) {
+    console.log(msg)
+  }
+
   render () {
     const students = [
       { name: 'Rahul', age: 24 },
@@ -9,9 +13,9 @@ export default class StudentList extends React.Component {
     ]
     // const studentList = students.map(student => <li>student.name - student.age</li>)
     return (
-      <div style={{textAlign: 'left'}}>
+      <div>
         <ul>
-          {students.map((student, index) => <li key={index}>{student.name} - {student.age}</li>)}
+          {students.map((student, index) => <li key={index} onClick={this.studentClicked.bind(this, student.name)}>{student.name} - {student.age}</li>)}
         </ul>
       </div>
     )
